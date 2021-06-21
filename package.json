@@ -1,0 +1,34 @@
+{
+  "name": "pdf2json-helper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mattsoftware/pdf2json-helper.git",
+  "author": "Matt Paine <matt@mattsoftware.com>",
+  "license": "MIT",
+  "dependencies": {
+    "pdf2json": "^1.2.3"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.153.0",
+    "flow-typed": "^3.3.1",
+    "jest": "^27.0.4"
+  },
+  "scripts": {
+    "test": "yarn run test:once --watchAll",
+    "test:once": "AWS_XRAY_CONTEXT_MISSING=LOG_ERROR AWS_XRAY_LOG_LEVEL=silent jest",
+    "test:coverage": "yarn run test --coverage",
+    "flow": "yarn flow:stop && watch flow",
+    "flow:stop": "flow stop",
+    "flow:update": "flow-typed update",
+    "package": "./scripts/package.sh"
+  },
+  "prettier": {
+    "parser": "babel",
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "avoid",
+    "bracketSpacing": false
+  }
+}
